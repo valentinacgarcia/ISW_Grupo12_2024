@@ -8,7 +8,7 @@ Estructura de las carpetas: Se decidio crear 3 carpetas ptincipales. Teorico, pr
 
            
 Dentro de la carpeta Teorico, en una primera instancia se planea que haya una subcarpeta llamada Diapositivas, donde subiremos las diapositivas vistas en el teorico con la profe meles.
-Dentro de la carpeta practrico subiremos el link a las clases grabadas y los trabajos practicos que sean entregables
+Dentro de la carpeta practrico subiremos el link a las clases grabadas y los trabajos practicos que sean entregables. Tambien subiremos los lineamientos para los tp
 Dentro de la carpeta DocumentosUtiles, subiremos la modalidad academica y la guia para hacer commits en git
 
 Guias de nombrado:
@@ -20,6 +20,7 @@ Diapositivas:  ISW_diapositiva<nombre_de_la_diapositiva_como_figura_en_la_uv>.pd
 Modalidad academica : ISW_Modadalidad_Académica_2024.pdf   ISW_Grupo12_2024/DocumentosUtiles
 
 Guia Github : ISW_guia_github_2024.pdf    ISW_Grupo12_2024/DocumentosUtiles
+Lineamientos para los trabajos practicos : ISW_lineamientos.pdf     ISW_Grupo12_2024/practico
 
 Criterio de línea base
 Tomaremos como línea base cada entrega de trabajos prácticos evaluables y sus correcciones.
