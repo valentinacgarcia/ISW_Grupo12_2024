@@ -17,7 +17,9 @@ Diapositivas:  ISW_diapositiva<nombre_de_la_diapositiva_como_figura_en_la_uv>.pd
 Modalidad academica : ISW_Modadalidad_Académica_2024.pdf   ISW_Grupo12_2024/DocumentosUtiles
 
 Guia Github : ISW_guia_github_2024.pdf    ISW_Grupo12_2024/DocumentosUtiles
+
 Lineamientos para los trabajos practicos : ISW_lineamientos.pdf     ISW_Grupo12_2024/practico
+
 Guía de trabajos practicos: ISW_enunciadosTPEvaluables.pdf ISW_Grupo12_2024/practico
 
 Criterio de línea base
