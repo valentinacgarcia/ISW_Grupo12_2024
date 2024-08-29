@@ -26,4 +26,4 @@ Guía de trabajos prácticos resultos: ISW_Guia_Trabajos_Practicos_Resueltos.pdf
 
 
 Criterio de línea base
-Tomaremos como línea base cada entrega de trabajos prácticos evaluables y sus correcciones.
+Tomaremos como línea base cada entrega de trabajos prácticos evaluables y sus correcciones, así nos aseguramos de siempre marcar un estado estable de los archivos cuando sean agregados a la línea base.
