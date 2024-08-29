@@ -22,5 +22,6 @@ Modalidad academica : ISW_Modadalidad_Académica_2024.pdf   ISW_Grupo12_2024/Doc
 Guia Github : ISW_guia_github_2024.pdf    ISW_Grupo12_2024/DocumentosUtiles
 Lineamientos para los trabajos practicos : ISW_lineamientos.pdf     ISW_Grupo12_2024/practico
 Guía de trabajos practicos: ISW_enunciadosTPEvaluables.pdf ISW_Grupo12_2024/practico
+
 Criterio de línea base
 Tomaremos como línea base cada entrega de trabajos prácticos evaluables y sus correcciones.
