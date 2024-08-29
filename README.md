@@ -1,4 +1,4 @@
-# ISW_4K1_2024_GRUPO12
+# ISW_Grupo12_2024
 Aquí se realizará la gestión de configuración del contenido de la cátedra de "Ingeniería y calidad de software"
 Integrantes:
 
