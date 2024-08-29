@@ -1,6 +1,7 @@
 # ISW_4K1_2024_GRUPO12
 Aquí se realizará la gestión de configuración del contenido de la cátedra de "Ingeniería y calidad de software"
 Integrantes:
+
 • Bernahola, Rodrigo – 87479
 
 • Caballero, Franco - 82403
@@ -14,7 +15,9 @@ Integrantes:
 • Manzolido, Evelyn María - 76559
 
 Estructura del repositorio:
+
 ISW_Grupo12_2024
+
 • Diapositivas
 
 • Guías
