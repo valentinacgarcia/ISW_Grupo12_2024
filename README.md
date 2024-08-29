@@ -20,9 +20,9 @@ Guia Github : ISW_guia_github_2024.pdf    ISW_Grupo12_2024/DocumentosUtiles
 
 Lineamientos para los trabajos practicos : ISW_lineamientos.pdf     ISW_Grupo12_2024/practico
 
-Guía de trabajos practicos: ISW_enunciadosTPEvaluables.pdf ISW_Grupo12_2024/practico
+Guía de trabajos practicos: ISW_enunciados_TP_Evaluables.pdf ISW_Grupo12_2024/practico
 
-Guía de trabajos prácticos resultos: ISW_guiaTrabajosPracticosResueltos.pdf ISW_Grupo12_2024/practico
+Guía de trabajos prácticos resultos: ISW_guia_Trabajos_Practicos_Resueltos.pdf ISW_Grupo12_2024/practico
 
 
 Criterio de línea base
