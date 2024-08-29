@@ -6,10 +6,7 @@ Link del Repositorio : https://github.com/valentinacgarcia/ISW_Grupo12_2024
 
 Estructura de las carpetas: Se decidio crear 3 carpetas principales. Teorico, practico y DocumentosUtiles.
 
-           
-Dentro de la carpeta Teorico, en una primera instancia se planea que haya una subcarpeta llamada Diapositivas, donde subiremos las diapositivas vistas en el teorico con la profe Meles.
-Dentro de la carpeta practrico subiremos el link a las clases grabadas y los trabajos practicos que sean entregables. Tambien subiremos los lineamientos para los tp
-Dentro de la carpeta DocumentosUtiles, subiremos la modalidad academica y la guia para hacer commits en git
+Dentro de la carpeta Teórico, se creará una subcarpeta llamada "Diapositivas" para subir las diapositivas de las clases teóricas impartidas por la profesora Meles. En la carpeta Práctico, se almacenarán los enlaces a las clases grabadas y los trabajos prácticos entregables. Además, en la carpeta Documentos Útiles, se subirán los lineamientos para la realización de trabajos prácticos, la modalidad académica y la guía para hacer commits en Git.
 
 Guias de nombrado:
 
