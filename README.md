@@ -14,15 +14,15 @@ Links a clases grabadas:  ISW_grabaciones_2024.pdf	ISW_Grupo12_2024/practico
 
 Diapositivas:  ISW_diapositiva<nombre_de_la_diapositiva_como_figura_en_la_uv>.pdf    ISW_Grupo12_2024/teorico/diapositivas
 
-Modalidad academica : ISW_Modadalidad_Académica_2024.pdf   ISW_Grupo12_2024/DocumentosUtiles
+Modalidad academica : ISW_Modalidad_Académica_2024.pdf   ISW_Grupo12_2024/DocumentosUtiles
 
 Guia Github : ISW_guia_github_2024.pdf    ISW_Grupo12_2024/DocumentosUtiles
 
 Lineamientos para los trabajos practicos : ISW_lineamientos.pdf     ISW_Grupo12_2024/practico
 
-Guía de trabajos practicos: ISW_enunciadosTPEvaluables.pdf ISW_Grupo12_2024/practico
+Guía de trabajos practicos: ISW_Enunciados_TP_Evaluables.pdf ISW_Grupo12_2024/practico
  
-Guía de trabajos prácticos resultos: ISW_guiaTrabajosPracticosResueltos.pdf ISW_Grupo12_2024/practico
+Guía de trabajos prácticos resultos: ISW_Guia_Trabajos_Practicos_Resueltos.pdf ISW_Grupo12_2024/practico
 
 
 Criterio de línea base
