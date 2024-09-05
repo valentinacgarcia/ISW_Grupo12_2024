@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Pedido de Envío</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Publicar Pedido de Envío</h2>
+    <form id="pedido-form">
+        <label for="tipo-carga">Tipo de Carga</label>
+        <select id="tipo-carga" required>
+            <option value="">Seleccione...</option>
+            <option value="documentacion">Documentación</option>
+            <option value="paquete">Paquete</option>
+            <option value="granos">Granos</option>
+            <option value="hacienda">Hacienda</option>
+        </select>
+
+        <label for="retiro-domicilio">Domicilio de Retiro</label>
+        <input type="text" id="retiro-domicilio" placeholder="Calle y número" required>
+        <input type="text" id="retiro-localidad" placeholder="Localidad" required>
+        <input type="text" id="retiro-provincia" placeholder="Provincia" required>
+        <input type="text" id="retiro-referencia" placeholder="Referencia (opcional)">
+
+        <label for="retiro-fecha">Fecha de Retiro</label>
+        <input type="date" id="retiro-fecha" required>
+
+        <label for="entrega-domicilio">Domicilio de Entrega</label>
+        <input type="text" id="entrega-domicilio" placeholder="Calle y número" required>
+        <input type="text" id="entrega-localidad" placeholder="Localidad" required>
+        <input type="text" id="entrega-provincia" placeholder="Provincia" required>
+        <input type="text" id="entrega-referencia" placeholder="Referencia (opcional)">
+
+        <label for="entrega-fecha">Fecha de Entrega</label>
+        <input type="date" id="entrega-fecha" required>
+
+        <label for="fotos">Adjuntar Fotos (opcional)</label>
+        <input type="file" id="fotos" accept="image/jpeg, image/png" multiple>
+
+        <button type="submit">Publicar Pedido</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
