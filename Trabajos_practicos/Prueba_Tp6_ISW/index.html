@@ -5,49 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publicar Pedido de Envío</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f9;
-        }
-        form {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 600px;
-            margin: auto;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-        button {
-            background: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background: #0056b3;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Publicar Pedido de Envío</h2>
+    <header>
+        <h1>
+            <img src="camion envios.webp" alt="Logo" class="logo">
+            Publicar Pedido de Envío
+        </h1>
+    </header>
     <form id="pedido-form">
         <label for="tipo-carga">Tipo de Carga</label>
         <select id="tipo-carga" required>
@@ -60,19 +27,70 @@
 
         <label for="retiro-domicilio">Domicilio de Retiro</label>
         <input type="text" id="retiro-domicilio" placeholder="Calle y número" required>
+        <select id="retiro-provincia" required>
+            <option value="">Seleccione una provincia</option>
+            <option value="buenos_aires">Buenos Aires</option>
+            <option value="catamarca">Catamarca</option>
+            <option value="chaco">Chaco</option>
+            <option value="chubut">Chubut</option>
+            <option value="cordoba">Córdoba</option>
+            <option value="corrientes">Corrientes</option>
+            <option value="entre_rios">Entre Ríos</option>
+            <option value="formosa">Formosa</option>
+            <option value="jujuy">Jujuy</option>
+            <option value="la_pampa">La Pampa</option>
+            <option value="la_rioja">La Rioja</option>
+            <option value="mendoza">Mendoza</option>
+            <option value="misiones">Misiones</option>
+            <option value="neuquen">Neuquén</option>
+            <option value="rio_negro">Río Negro</option>
+            <option value="salta">Salta</option>
+            <option value="san_juan">San Juan</option>
+            <option value="san_luis">San Luis</option>
+            <option value="santa_cruz">Santa Cruz</option>
+            <option value="santa_fe">Santa Fe</option>
+            <option value="santiago_del_estero">Santiago del Estero</option>
+            <option value="tierra_del_fuego">Tierra del Fuego</option>
+            <option value="tucuman">Tucumán</option>
+        </select>
         <input type="text" id="retiro-localidad" placeholder="Localidad" required>
-        <input type="text" id="retiro-provincia" placeholder="Provincia" required>
         <input type="text" id="retiro-referencia" placeholder="Referencia (opcional)">
-
-        <label for="retiro-fecha">Fecha de Retiro</label>
-        <input type="date" id="retiro-fecha" required>
+        
 
         <label for="entrega-domicilio">Domicilio de Entrega</label>
         <input type="text" id="entrega-domicilio" placeholder="Calle y número" required>
+        <select id="entrega-provincia" required>
+            <option value="">Seleccione una provincia</option>
+            <option value="buenos_aires">Buenos Aires</option>
+            <option value="catamarca">Catamarca</option>
+            <option value="chaco">Chaco</option>
+            <option value="chubut">Chubut</option>
+            <option value="cordoba">Córdoba</option>
+            <option value="corrientes">Corrientes</option>
+            <option value="entre_rios">Entre Ríos</option>
+            <option value="formosa">Formosa</option>
+            <option value="jujuy">Jujuy</option>
+            <option value="la_pampa">La Pampa</option>
+            <option value="la_rioja">La Rioja</option>
+            <option value="mendoza">Mendoza</option>
+            <option value="misiones">Misiones</option>
+            <option value="neuquen">Neuquén</option>
+            <option value="rio_negro">Río Negro</option>
+            <option value="salta">Salta</option>
+            <option value="san_juan">San Juan</option>
+            <option value="san_luis">San Luis</option>
+            <option value="santa_cruz">Santa Cruz</option>
+            <option value="santa_fe">Santa Fe</option>
+            <option value="santiago_del_estero">Santiago del Estero</option>
+            <option value="tierra_del_fuego">Tierra del Fuego</option>
+            <option value="tucuman">Tucumán</option>
+        </select>
         <input type="text" id="entrega-localidad" placeholder="Localidad" required>
-        <input type="text" id="entrega-provincia" placeholder="Provincia" required>
         <input type="text" id="entrega-referencia" placeholder="Referencia (opcional)">
 
+        <label for="retiro-fecha">Fecha de Retiro</label>
+        <input type="date" id="retiro-fecha" required>
+        
         <label for="entrega-fecha">Fecha de Entrega</label>
         <input type="date" id="entrega-fecha" required>
 
@@ -81,6 +99,10 @@
 
         <button type="submit">Publicar Pedido</button>
     </form>
+
+    <div id="success-message" class="hidden">
+        <p>¡Pedido realizado con éxito!</p>
+    </div>
 
     <script src="script.js"></script>
 </body>
