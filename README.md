@@ -4,7 +4,7 @@ Integrantes:
 
 • Bernahola, Rodrigo – 87479
 
-• Caballero, Franco - 82403
+• Cavallero, Franco - 82403
 
 • Diaz, Nancy – 30923
 
