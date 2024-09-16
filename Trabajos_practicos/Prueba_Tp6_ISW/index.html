@@ -7,6 +7,24 @@
     <title>Publicar Pedido de Envío</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+        .input-group input {
+            flex-grow: 1;
+        }
+        .input-group input.numero {
+            flex-grow: 0.3; /* Hace que el campo número sea más pequeño que calle */
+        }
+        .hidden {
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,7 +35,7 @@
     </header>
     <form id="pedido-form">
         <label for="tipo-carga">Tipo de Carga</label>
-        <select id="tipo-carga" required>
+        <select id="tipo-carga" name="tipo-carga" required>
             <option value="">Seleccione...</option>
             <option value="documentacion">Documentación</option>
             <option value="paquete">Paquete</option>
@@ -26,76 +44,85 @@
         </select>
 
         <label for="retiro-domicilio">Domicilio de Retiro</label>
-        <input type="text" id="retiro-domicilio" placeholder="Calle y número" required>
-        <select id="retiro-provincia" required>
+        <div class="input-group">
+            <input type="text" id="retiro-domicilio-calle" name="retiro-domicilio-calle" placeholder="Calle" required>
+            <input type="number" id="retiro-domicilio-numero" name="retiro-domicilio-numero" class="numero" placeholder="Número" required>
+        </div>
+
+        <select id="retiro-provincia" name="retiro-provincia" required>
             <option value="">Seleccione una provincia</option>
-            <option value="buenos_aires">Buenos Aires</option>
+            <option value="buenos-aires">Buenos Aires</option>
+            <option value="caba">Ciudad Autónoma de Buenos Aires (CABA)</option>
             <option value="catamarca">Catamarca</option>
             <option value="chaco">Chaco</option>
             <option value="chubut">Chubut</option>
             <option value="cordoba">Córdoba</option>
             <option value="corrientes">Corrientes</option>
-            <option value="entre_rios">Entre Ríos</option>
+            <option value="entre-rios">Entre Ríos</option>
             <option value="formosa">Formosa</option>
             <option value="jujuy">Jujuy</option>
-            <option value="la_pampa">La Pampa</option>
-            <option value="la_rioja">La Rioja</option>
+            <option value="la-pampa">La Pampa</option>
+            <option value="la-rioja">La Rioja</option>
             <option value="mendoza">Mendoza</option>
             <option value="misiones">Misiones</option>
             <option value="neuquen">Neuquén</option>
-            <option value="rio_negro">Río Negro</option>
+            <option value="rio-negro">Río Negro</option>
             <option value="salta">Salta</option>
-            <option value="san_juan">San Juan</option>
-            <option value="san_luis">San Luis</option>
-            <option value="santa_cruz">Santa Cruz</option>
-            <option value="santa_fe">Santa Fe</option>
-            <option value="santiago_del_estero">Santiago del Estero</option>
-            <option value="tierra_del_fuego">Tierra del Fuego</option>
+            <option value="san-juan">San Juan</option>
+            <option value="san-luis">San Luis</option>
+            <option value="santa-cruz">Santa Cruz</option>
+            <option value="santa-fe">Santa Fe</option>
+            <option value="santiago-del-estero">Santiago del Estero</option>
+            <option value="tierra-del-fuego">Tierra del Fuego</option>
             <option value="tucuman">Tucumán</option>
         </select>
-        <input type="text" id="retiro-localidad" placeholder="Localidad" required>
-        <input type="text" id="retiro-referencia" placeholder="Referencia (opcional)">
-        
+        <input type="text" id="retiro-localidad" name="retiro-localidad" placeholder="Localidad" required>
+        <input type="text" id="retiro-referencia" name="retiro-referencia" placeholder="Referencia (opcional)">
 
         <label for="entrega-domicilio">Domicilio de Entrega</label>
-        <input type="text" id="entrega-domicilio" placeholder="Calle y número" required>
-        <select id="entrega-provincia" required>
+        <div class="input-group">
+            <input type="text" id="entrega-domicilio-calle" name="entrega-domicilio-calle" placeholder="Calle" required>
+            <input type="number" id="entrega-domicilio-numero" name="entrega-domicilio-numero" class="numero" placeholder="Número" required>
+        </div>
+
+        <select id="entrega-provincia" name="entrega-provincia" required>
             <option value="">Seleccione una provincia</option>
-            <option value="buenos_aires">Buenos Aires</option>
+            <option value="buenos-aires">Buenos Aires</option>
+            <option value="caba">Ciudad Autónoma de Buenos Aires (CABA)</option>
             <option value="catamarca">Catamarca</option>
             <option value="chaco">Chaco</option>
             <option value="chubut">Chubut</option>
             <option value="cordoba">Córdoba</option>
             <option value="corrientes">Corrientes</option>
-            <option value="entre_rios">Entre Ríos</option>
+            <option value="entre-rios">Entre Ríos</option>
             <option value="formosa">Formosa</option>
             <option value="jujuy">Jujuy</option>
-            <option value="la_pampa">La Pampa</option>
-            <option value="la_rioja">La Rioja</option>
+            <option value="la-pampa">La Pampa</option>
+            <option value="la-rioja">La Rioja</option>
             <option value="mendoza">Mendoza</option>
             <option value="misiones">Misiones</option>
             <option value="neuquen">Neuquén</option>
-            <option value="rio_negro">Río Negro</option>
+            <option value="rio-negro">Río Negro</option>
             <option value="salta">Salta</option>
-            <option value="san_juan">San Juan</option>
-            <option value="san_luis">San Luis</option>
-            <option value="santa_cruz">Santa Cruz</option>
-            <option value="santa_fe">Santa Fe</option>
-            <option value="santiago_del_estero">Santiago del Estero</option>
-            <option value="tierra_del_fuego">Tierra del Fuego</option>
+            <option value="san-juan">San Juan</option>
+            <option value="san-luis">San Luis</option>
+            <option value="santa-cruz">Santa Cruz</option>
+            <option value="santa-fe">Santa Fe</option>
+            <option value="santiago-del-estero">Santiago del Estero</option>
+            <option value="tierra-del-fuego">Tierra del Fuego</option>
             <option value="tucuman">Tucumán</option>
         </select>
-        <input type="text" id="entrega-localidad" placeholder="Localidad" required>
-        <input type="text" id="entrega-referencia" placeholder="Referencia (opcional)">
+        <input type="text" id="entrega-localidad" name="entrega-localidad" placeholder="Localidad" required>
+        <input type="text" id="entrega-referencia" name="entrega-referencia" placeholder="Referencia (opcional)">
 
         <label for="retiro-fecha">Fecha de Retiro</label>
-        <input type="date" id="retiro-fecha" required>
+        <input type="date" id="retiro-fecha" name="retiro-fecha" required>
         
         <label for="entrega-fecha">Fecha de Entrega</label>
-        <input type="date" id="entrega-fecha" required>
+        <input type="date" id="entrega-fecha" name="entrega-fecha" required>
 
         <label for="fotos">Adjuntar Fotos (opcional)</label>
-        <input type="file" id="fotos" accept="image/jpeg, image/png" multiple>
+        <input type="file" id="fotos" name="fotos" accept="image/jpeg, image/png" multiple>
 
         <button type="submit">Publicar Pedido</button>
     </form>
@@ -103,7 +130,52 @@
     <div id="success-message" class="hidden">
         <p>¡Pedido realizado con éxito!</p>
     </div>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        emailjs.init('opibYy7Wi7pndwwYB'); 
 
-    <script src="script.js"></script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("pedido-form");
+            const successMessage = document.getElementById("success-message");
+
+            form.addEventListener("submit", function(event) {
+    
+                event.preventDefault();
+
+ 
+                const today = new Date();
+                const retiroFecha = new Date(document.getElementById("retiro-fecha").value);
+                const entregaFecha = new Date(document.getElementById("entrega-fecha").value);
+
+                if (retiroFecha < today) {
+                    alert("La fecha de retiro no puede ser anterior a hoy.");
+                    return;
+                }
+
+                if (entregaFecha < retiroFecha) {
+                    alert("La fecha de entrega no puede ser anterior a la fecha de retiro.");
+                    return;
+                }
+
+                // Enviar el correo electrónico utilizando sendForm
+                emailjs.sendForm('service_z5vfelj', 'template_r22jk1l', form)
+                    .then(function(response) {
+                        console.log('Correo enviado exitosamente', response);
+                        successMessage.classList.remove('hidden');
+                        successMessage.classList.add('show');
+
+                        setTimeout(() => {
+                            successMessage.classList.remove('show');
+                            successMessage.classList.add('hidden');
+                        }, 3000);
+
+                        form.reset(); 
+                    }, function(error) {
+                        console.error('Error al enviar el correo:', error);
+                        alert('Error al enviar el correo: ' + JSON.stringify(error));
+                    });
+            });
+        });
+    </script>
 </body>
 </html>

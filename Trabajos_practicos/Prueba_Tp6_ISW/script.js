@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('pedido-form');
     const submitButton = form.querySelector('button[type="submit"]');
+    const successMessage = document.getElementById('success-message');
+
     const retiroFecha = document.getElementById('retiro-fecha');
     const entregaFecha = document.getElementById('entrega-fecha');
-    const successMessage = document.getElementById('success-message');
-    
-    const retiroDomicilio = document.getElementById('retiro-domicilio');
+    const retiroDomicilioCalle = document.getElementById('retiro-domicilio-calle');
+    const retiroDomicilioNumero = document.getElementById('retiro-domicilio-numero');
     const retiroLocalidad = document.getElementById('retiro-localidad');
     const retiroProvincia = document.getElementById('retiro-provincia');
-    
-    const entregaDomicilio = document.getElementById('entrega-domicilio');
+
+    const entregaDomicilioCalle = document.getElementById('entrega-domicilio-calle');
+    const entregaDomicilioNumero = document.getElementById('entrega-domicilio-numero');
     const entregaLocalidad = document.getElementById('entrega-localidad');
     const entregaProvincia = document.getElementById('entrega-provincia');
 
@@ -24,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateMinDates() {
         const today = getToday();
         retiroFecha.setAttribute('min', today);
-        
+
         if (retiroFecha.value) {
             entregaFecha.setAttribute('min', retiroFecha.value);
         } else {
@@ -34,54 +36,89 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function checkFormValidity() {
         let isValid = true;
-        const today = getToday();
-        
-        if (!retiroDomicilio.value || !retiroLocalidad.value || !retiroProvincia.value || !retiroFecha.value) {
-            isValid = false;
-        }
-        
-        if (!entregaDomicilio.value || !entregaLocalidad.value || !entregaProvincia.value || !entregaFecha.value) {
-            isValid = false;
-        }
+   
+        const requiredFields = [
+            'retiro-domicilio-calle',
+            'retiro-domicilio-numero',
+            'retiro-localidad',
+            'retiro-provincia',
+            'retiro-fecha',
+            'entrega-domicilio-calle',
+            'entrega-domicilio-numero',
+            'entrega-localidad',
+            'entrega-provincia',
+            'entrega-fecha'
+        ];
+        requiredFields.forEach(id => {
+            const field = document.getElementById(id);
+            if (!field.value) {
+                isValid = false;
+            }
+        });
 
         submitButton.disabled = !isValid;
         return isValid;
     }
 
-    retiroFecha.addEventListener('input', function () {
-        updateMinDates();
-        checkFormValidity();
-    });
+    function enviarEmail() {
+     
+        const templateParams = {
+            "retiro-fecha": retiroFecha.value,
+            "entrega-fecha": entregaFecha.value,
+            "retiro-domicilio-calle": retiroDomicilioCalle.value,
+            "retiro-domicilio-numero": retiroDomicilioNumero.value,
+            "retiro-localidad": retiroLocalidad.value,
+            "retiro-provincia": retiroProvincia.value,
+            "entrega-domicilio-calle": entregaDomicilioCalle.value,  
+            "entrega-domicilio-numero": entregaDomicilioNumero.value,
+            "entrega-localidad": entregaLocalidad.value,
+            "entrega-provincia": entregaProvincia.value
+        };
 
-    entregaFecha.addEventListener('input', function () {
-        checkFormValidity();
-    });
+
+        emailjs.send('service_z5vfelj', 'template_r22jk1l', templateParams)
+            .then(function(response) {
+                console.log('Correo enviado exitosamente', response);
+                successMessage.classList.remove('hidden');
+                successMessage.classList.add('show');
+
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                    successMessage.classList.add('hidden');
+                }, 3000);
+
+                form.reset();
+                updateMinDates();
+            }, function(error) {
+                console.error('Error al enviar el correo:', error);
+                alert('Error al enviar el correo: ' + JSON.stringify(error));
+            });
+    }
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
-        
-     
-        if (!form.checkValidity()) {
+
+
+        const retiroNumero = document.getElementById('retiro-domicilio-numero');
+        const entregaNumero = document.getElementById('entrega-domicilio-numero');
+
+        if (isNaN(retiroNumero.value) || retiroNumero.value <= 0) {
+            alert("El número de domicilio de retiro debe ser un número positivo.");
+            return;
+        }
+
+        if (isNaN(entregaNumero.value) || entregaNumero.value <= 0) {
+            alert("El número de domicilio de entrega debe ser un número positivo.");
+            return;
+        }
+
+        if (!checkFormValidity()) {
             console.log('Form is not valid');
             return;
         }
-        
 
-        successMessage.classList.remove('hidden');
-        successMessage.classList.add('show');
-        
-        setTimeout(() => {
-            successMessage.classList.remove('show');
-            successMessage.classList.add('hidden');
-        }, 3000);
-        
-
-        form.reset();
-        
-
-        updateMinDates();
+        enviarEmail();  
     });
 
-   
     updateMinDates();
 });
