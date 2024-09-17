@@ -46,7 +46,8 @@
         <label for="retiro-domicilio">Domicilio de Retiro</label>
         <div class="input-group">
             <input type="text" id="retiro-domicilio-calle" name="retiro-domicilio-calle" placeholder="Calle" required>
-            <input type="number" id="retiro-domicilio-numero" name="retiro-domicilio-numero" class="numero" placeholder="Número" required>
+            <input type="number" id="retiro-domicilio-numero" name="retiro-domicilio-numero" class="numero" placeholder="Número" required min="1" max="9999" oninput="this.value = this.value.slice(0, 4)">
+
         </div>
 
         <select id="retiro-provincia" name="retiro-provincia" required>
@@ -82,7 +83,8 @@
         <label for="entrega-domicilio">Domicilio de Entrega</label>
         <div class="input-group">
             <input type="text" id="entrega-domicilio-calle" name="entrega-domicilio-calle" placeholder="Calle" required>
-            <input type="number" id="entrega-domicilio-numero" name="entrega-domicilio-numero" class="numero" placeholder="Número" required>
+            <input type="number" id="entrega-domicilio-numero" name="entrega-domicilio-numero" class="numero" placeholder="Número" required min="1" max="9999" oninput="this.value = this.value.slice(0, 4)">
+
         </div>
 
         <select id="entrega-provincia" name="entrega-provincia" required>
@@ -116,13 +118,13 @@
         <input type="text" id="entrega-referencia" name="entrega-referencia" placeholder="Referencia (opcional)">
 
         <label for="retiro-fecha">Fecha de Retiro</label>
-        <input type="date" id="retiro-fecha" name="retiro-fecha" required>
-        
+        <input type="date" id="retiro-fecha" name="retiro-fecha" required min="01-01-2024" max="31-12-9999">
+
         <label for="entrega-fecha">Fecha de Entrega</label>
         <input type="date" id="entrega-fecha" name="entrega-fecha" required>
 
         <label for="fotos">Adjuntar Fotos (opcional)</label>
-        <input type="file" id="fotos" name="fotos" accept="image/jpeg, image/png" multiple>
+        <input type="file" id="fotos" name="fotos" accept="image/jpg, image/png" multiple>
 
         <button type="submit">Publicar Pedido</button>
     </form>
@@ -146,8 +148,15 @@
                 const today = new Date();
                 const retiroFecha = new Date(document.getElementById("retiro-fecha").value);
                 const entregaFecha = new Date(document.getElementById("entrega-fecha").value);
-
+                retiroFecha.setHours(23)
+                retiroFecha.setMinutes(59)
+                retiroFecha.setDate(retiroFecha.getDate()+1)
+                entregaFecha.setHours(23)
+                entregaFecha.setMinutes(59)
+                entregaFecha.setDate(entregaFecha.getDate()+1)
                 if (retiroFecha < today) {
+                    alert(today)
+                alert(retiroFecha)
                     alert("La fecha de retiro no puede ser anterior a hoy.");
                     return;
                 }
