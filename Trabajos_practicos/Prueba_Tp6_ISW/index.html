@@ -124,7 +124,7 @@
         <input type="date" id="entrega-fecha" name="entrega-fecha" required>
 
         <label for="fotos">Adjuntar Fotos (opcional)</label>
-        <input type="file" id="fotos" name="fotos" accept="image/jpg, image/png" multiple>
+        <input type="file" id="fotos" name="fotos" accept=".jpg, .png" multiple>
 
         <button type="submit">Publicar Pedido</button>
     </form>
@@ -155,8 +155,7 @@
                 entregaFecha.setMinutes(59)
                 entregaFecha.setDate(entregaFecha.getDate()+1)
                 if (retiroFecha < today) {
-                    alert(today)
-                alert(retiroFecha)
+                    
                     alert("La fecha de retiro no puede ser anterior a hoy.");
                     return;
                 }
