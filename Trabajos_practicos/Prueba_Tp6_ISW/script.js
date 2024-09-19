@@ -9,11 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const retiroDomicilioNumero = document.getElementById('retiro-domicilio-numero');
     const retiroLocalidad = document.getElementById('retiro-localidad');
     const retiroProvincia = document.getElementById('retiro-provincia');
+    const retiroReferencia = document.getElementById('retiro-referencia');
 
     const entregaDomicilioCalle = document.getElementById('entrega-domicilio-calle');
     const entregaDomicilioNumero = document.getElementById('entrega-domicilio-numero');
     const entregaLocalidad = document.getElementById('entrega-localidad');
     const entregaProvincia = document.getElementById('entrega-provincia');
+    const entregaReferencia = document.getElementById('entrega-referencia');
+    const fotosInput = document.getElementById('fotos');
 
     function getToday() {
         const today = new Date();
@@ -61,7 +64,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function enviarEmail() {
-     
+
+        const fileNames = Array.from(fotosInput.files).map(file => file.name);
+
         const templateParams = {
             "retiro-fecha": retiroFecha.value,
             "entrega-fecha": entregaFecha.value,
@@ -69,10 +74,14 @@ document.addEventListener('DOMContentLoaded', function () {
             "retiro-domicilio-numero": retiroDomicilioNumero.value,
             "retiro-localidad": retiroLocalidad.value,
             "retiro-provincia": retiroProvincia.value,
+            "retiro-referencia": retiroReferencia.value,
             "entrega-domicilio-calle": entregaDomicilioCalle.value,  
             "entrega-domicilio-numero": entregaDomicilioNumero.value,
             "entrega-localidad": entregaLocalidad.value,
-            "entrega-provincia": entregaProvincia.value
+            "entrega-provincia": entregaProvincia.value,
+            "entrega-referencia": entregaReferencia.value,
+            "fotos": fileNames.join(', ')
+
         };
 
 
